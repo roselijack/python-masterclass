@@ -1,0 +1,52 @@
+import shelve
+with shelve.open("locations") as location:
+    # {"0":{"desc":"you are sitting, hehi",
+    #                "exits":{},
+    #                "nameExits":{}},
+    #           "1":{"desc":"you are standing",
+    #                "exits":{"W":2,"E":3,"N":5,"S":4,"Q":0},
+    #                "nameExits":{"2": 2, "3": 3, "5": 5, "4": 4}},
+    #           "2":{"desc":"you are in the hill",
+    #                "exits":{"N":5,"Q":0},
+    #                "nameExits":{"5": 5}},
+    #           "3":{"desc":"you are inside",
+    #                "exits":{"W":1,"Q":0},
+    #                "nameExits":{"1": 1}},
+    #           "4":{"desc":"you are in vallege",
+    #                "exits":{"N":1,"W":2,"Q":0},
+    #                "nameExits":{"1": 1, "2": 2}},
+    #           "5":{"desc":"you are in the forest",
+    #                "exits":{"W":2,"S":1,"Q":0},
+    #                "nameExits":{"2": 2, "1": 1}}}
+    location["location"]={0:{"desc":"you are sitting, hehi",
+                             "exits":{},
+                             "nameExits":{}},
+                          1:{"desc":"you are standing",
+                             "exits":{"W":2,"E":3,"N":5,"S":4,"Q":0},
+                             "nameExits":{"2": 2, "3": 3, "5": 5, "4": 4}},
+                          2:{"desc":"you are in the hill",
+                             "exits":{"N":5,"Q":0},
+                             "nameExits":{"5": 5}},
+                          3:{"desc":"you are inside",
+                             "exits":{"W":1,"Q":0},
+                             "nameExits":{"1": 1}},
+                          4:{"desc":"you are in vallege",
+                             "exits":{"N":1,"W":2,"Q":0},
+                             "nameExits":{"1": 1, "2": 2}},
+                          5:{"desc":"you are in the forest",
+                             "exits":{"W":2,"S":1,"Q":0},
+                             "nameExits":{"2": 2, "1": 1}}}
+
+with shelve.open("vocabulary") as vocabularys:
+    vocabularys["vocabulary"]={ "QUIT":  "Q",
+                                "NORTH": "N",
+                                "SOUTH": "S",
+                                "EAST":  "E",
+                                "WEST":  "W",
+                                "ROAD": "1",
+                                "HILL": "2",
+                                "BUILDING": "3",
+                                "VALLEY": "4",
+                                "FOREST": "5" }
+
+#给shelve赋值，只能用dic[xxx]=xxx,不能用dict={xxx},这样不生效
